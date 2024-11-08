@@ -62,18 +62,16 @@ function createCube(x, z, width, height, depth, material) {
   return cube;
 }
 
-// Existing buildings with updated materials
-const firstBuilding = createCube(-5, 14, 6, 3, 6, buildingMaterialBlue); // Institute Of Technology
+const firstBuilding = createCube(-5, 14, 6, 3, 6, buildingMaterialBlue); 
 addLabel(firstBuilding, "Institute Of Technology");
 
-const secondBuilding = createCube(-5, 2, 6, 3, 6, buildingMaterialWhite); // IT Support
+const secondBuilding = createCube(-5, 2, 6, 3, 6, buildingMaterialWhite);
 addLabel(secondBuilding, "IT Support");
 
-const thirdBuilding = createCube(-5, -10, 6, 3, 6, buildingMaterialYellow); // 305
+const thirdBuilding = createCube(-5, -10, 6, 3, 6, buildingMaterialYellow); 
 addLabel(thirdBuilding, "305");
 
-// New building in the right corner
-const rightCornerBuilding = createCube(10, 0, 6, 3, 6, buildingMaterialBrown); // Student's coffee
+const rightCornerBuilding = createCube(10, 0, 6, 3, 6, buildingMaterialBrown); 
 addLabel(rightCornerBuilding, "Lounge");
 
 function addLabel(building, text) {
@@ -100,7 +98,6 @@ const sphere = new THREE.Mesh(
 sphere.position.set(0, 0.5, 0);
 scene.add(sphere);
 
-// Move the sphere along the road, passing all buildings
 gsap.to(sphere.position, {
     duration: 20,
     repeat: -1,
