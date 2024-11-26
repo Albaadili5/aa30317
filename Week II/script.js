@@ -14,7 +14,6 @@ const box = new THREE.Mesh(boxGeometry,boxMaterial);
 //scene.add(box);
 
 
-
 for(var i=0;i<1000;i++)
 {
     const sphereGeometry = new THREE.SphereGeometry(0.02,32,32);
