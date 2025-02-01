@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="./script.js" defer></script>
+    <title>Virtual Classroom</title>
+</head>
+<body>
+    <a-scene>
+        <!-- Classroom walls -->
+        <a-box position="0 1.5 0" scale="6 3 6" material="color: lightblue; side: double"></a-box>
+
+        <!-- Windows -->
+        <a-box position="0 1.5 -2.9" scale="6 3 0.1" material="color: white; opacity: 0.7"></a-box>
+        <a-plane src="./textures/outdoor-image.jpg" position="0 1.5 -2.8" scale="5 2.5"></a-plane>
+
+        <!-- Camera -->
+        <a-camera position="0 1.5 4"></a-camera>
+    </a-scene>
+</body>
+</html>
