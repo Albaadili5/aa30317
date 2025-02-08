@@ -7,7 +7,42 @@
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene>
+    <script>
+      AFRAME.registerComponent("change-material", {
+        init: function () {
+          let desks = document.querySelectorAll('[gltf-model*="desk.glb"]');
+          let chairs = document.querySelectorAll('[gltf-model*="chair.glb"]');
+    
+          desks.forEach((desk) => {
+            desk.addEventListener("model-loaded", () => {
+              let mesh = desk.getObject3D("mesh");
+              if (mesh) {
+                mesh.traverse((node) => {
+                  if (node.isMesh) {
+                    node.material.color.set("#a7967b"); 
+                  }
+                });
+              }
+            });
+          });
+    
+          chairs.forEach((chair) => {
+            chair.addEventListener("model-loaded", () => {
+              let mesh = chair.getObject3D("mesh");
+              if (mesh) {
+                mesh.traverse((node) => {
+                  if (node.isMesh) {
+                    node.material.color.set("#56483b");
+                  }
+                });
+              }
+            });
+          });
+        },
+      });
+    </script>
+    
+    <a-scene change-material>
       <!-- Walls -->
       <a-plane
         position="0 2 -5"
